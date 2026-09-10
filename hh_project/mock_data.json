@@ -1,0 +1,12 @@
+{
+  "employers": [
+    {"id": 1, "name": "Yandex", "area": {"name": "Moscow"}, "alternate_url": "https://hh.ru/employer/1"},
+    {"id": 2, "name": "Tinkoff", "area": {"name": "Moscow"}, "alternate_url": "https://hh.ru/employer/2"}
+  ],
+  "vacancies": [
+    {"id": 101, "name": "Python Developer", "employer": {"id": 1}, "salary": {"from": 150000, "to": 250000, "currency": "RUR"}, "alternate_url": "http://hh.ru/vacancy/101", "published_at": "2023-10-01"},
+    {"id": 102, "name": "Junior Python Developer", "employer": {"id": 1}, "salary": {"from": 80000, "to": 120000, "currency": "RUR"}, "alternate_url": "http://hh.ru/vacancy/102", "published_at": "2023-10-02"},
+    {"id": 103, "name": "Data Scientist", "employer": {"id": 2}, "salary": {"from": 200000, "to": 300000, "currency": "RUR"}, "alternate_url": "http://hh.ru/vacancy/103", "published_at": "2023-10-03"},
+    {"id": 104, "name": "Backend Developer (Python)", "employer": {"id": 2}, "salary": {"from": 180000, "to": null, "currency": "RUR"}, "alternate_url": "http://hh.ru/vacancy/104", "published_at": "2023-10-04"}
+  ]
+}
