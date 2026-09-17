@@ -1,0 +1,60 @@
+from datetime import datetime
+
+def analyze_orders(orders):
+    monthly_data = {}
+
+    for order in orders:
+        date = datetime.strptime(order['date'], '%Y-%m-%d')
+        year_month = date.strftime('%Y-%m')
+
+        total_order_value = sum(item['price'] * item['quantity'] for item in order['items'])
+
+        if year_month not in monthly_data:
+            monthly_data[year_month] = {
+                "total_value": 0,
+                "order_count": 0
+            }
+
+        monthly_data[year_month]["total_value"] += total_order_value
+        monthly_data[year_month]["order_count"] += 1
+
+    result = {}
+    for year_month, data in monthly_data.items():
+        average_order_value = data["total_value"] / data["order_count"]
+        result[year_month] = {
+            "average_order_value": average_order_value,
+            "order_count": data["order_count"]
+        }
+
+    return result
+
+# Пример использования функции
+if __name__ == "__main__":
+    orders = [
+        {
+            "id": 1,
+            "date": "2023-05-15",
+            "items": [
+                {"name": "item1", "price": 100, "quantity": 2},
+                {"name": "item2", "price": 50, "quantity": 1}
+            ]
+        },
+        {
+            "id": 2,
+            "date": "2023-05-20",
+            "items": [
+                {"name": "item3", "price": 200, "quantity": 1},
+                {"name": "item4", "price": 150, "quantity": 2}
+            ]
+        },
+        {
+            "id": 3,
+            "date": "2023-06-05",
+            "items": [
+                {"name": "item5", "price": 300, "quantity": 1}
+            ]
+        }
+    ]
+
+    result = analyze_orders(orders)
+    print(result)
