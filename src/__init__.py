@@ -1,31 +1,350 @@
-import pytest
 
 
-@pytest.fixture
-def test_num1():
-    return {"numbers": [1, 2, 3, 4, 5, 6, 7, 8],"expected":4}
+# def where_the_person_is(arr, target):
+#     left, right = 0, len(arr) - 1
+#     while left <= right:
+#         mid = (left + right) // 2
+#         if arr[mid] == target:
+#             return mid
+#         elif arr[mid] < target:
+#             left = mid + 1
+#         else:
+#             right = mid - 1
+#         return - 1
+# import pytest
+#
+#
+# def is_palindrome(text):
+#     text = text.replace(" ", "").replace("'", "").lower()
+#     return text == text[::-1]
+# import pytest
+#
+#
+# def is_anagram(str1,str2):
+#     str1 = str1.replace(" ","").lower()
+#     str2 = str2.replace(" ","").lower()
+#     return  sorted(str1) == sorted((str2))
+# @pytest.mark.parametrize("str1,str2,expected",[
+#    ("listen", "silent", True),
+#         ("anagram", "nagaram", True),
+#         ("rail safety", "fairy tales", True),
+#         ("A gentleman", "Elegant man", True),
+#         ("hello", "world", False),
+#         ("python", "java", False),
+#         ("test", "best", False),
+#         ("anagram", "manga", False),
+#         ("Listen", "Silent", True),
+#         ("Dormitory", "Dirty room", True),
+#         ("The eyes", "They see", True),
+#         ("School master", "The classroom", True),
+#     ]
+# )
+# def test_is_anagram(str1, str2, expected):
+#     assert is_anagram(str1, str2) == expected
 
 
-@pytest.fixture
-def test_num2():
-    return {"numbers": [11, 12, 31, 43, 54]}
+# import pytest
+#
+#
+# def reverse_matrix(matrix):
+#     """Отражает матрицу по горизонтали (переворачивает строки)"""
+#     rows = len(matrix)
+#
+#     result = []
+#     for i in range(rows):
+#         result.append(matrix[rows - 1 - i])
+#
+#     return result
+#
+#
+# # ===== ФИКСТУРЫ =====
+#
+# @pytest.fixture
+# def matrix3x3():
+#     return [
+#         [1, 2, 3],
+#         [4, 5, 6],
+#         [7, 8, 9]
+#     ]
+#
+#
+# @pytest.fixture
+# def matrix3x4():
+#     return [
+#         [3, 5, 6, 7],
+#         [4, 5, 6, 7],
+#         [3, 5, 6, 7]
+#     ]
+#
+#
+# @pytest.fixture
+# def matrix4x5():
+#     return [
+#         [1, 2, 3, 5, 5],
+#         [2, 5, 5, 6, 7],
+#         [3, 4, 5, 6, 7],
+#         [1, 3, 5, 54, 5]
+#     ]
+#
+#
+# @pytest.fixture
+# def single_row():
+#     return [
+#         [1, 2, 5]
+#     ]
+#
+#
+# # ===== ПАРАМЕТРИЗОВАННЫЙ ТЕСТ =====
+#
+# @pytest.mark.parametrize(
+#     "matrix_fixture, expected",
+#     [
+#         ("matrix3x3", [[7, 8, 9], [4, 5, 6], [1, 2, 3]]),
+#         ("matrix3x4", [[3, 5, 6, 7], [4, 5, 6, 7], [3, 5, 6, 7]]),
+#         ("matrix4x5", [
+#             [1, 3, 5, 54, 5],
+#             [3, 4, 5, 6, 7],
+#             [2, 5, 5, 6, 7],
+#             [1, 2, 3, 5, 5]
+#         ]),
+#         ("single_row", [[1, 2, 5]]),  # одна строка не меняется
+#     ]
+# )
+# def test_reverse_matrix(matrix_fixture, expected, request):
+#     matrix = request.getfixturevalue(matrix_fixture)
+#     assert reverse_matrix(matrix) == expected
+# import pytest
+#
+#
+# @pytest.mark.parametrize("words", "exepected", [
+#     (["a", "bb", "ccc", "dd"],
+#      {1: ["a"], 2: ["bb", "dd"], 3: ["ccc"]}),
+#
+#     (["кот", "дом", "автомобиль", "лес"],
+#      {3: ["кот", "дом", "лес"], 10: ["автомобиль"]}),
+#
+#     ([], {}),
+#
+#     (["x", "y", "z"], {1: ["x", "y", "z"]})
+# ])
+# def group_by_length(words):
+#     result_lenght = {}
+#
+#     for char in words:
+#         lenght = len(char)
+#         if lenght not in result_lenght:
+#             result_lenght[lenght] = [char]
+#         else:
+#             result_lenght[lenght] += [char]
+#     return result_lenght
 
+# import pytest
+#
+#
+# @pytest.mark.parametrize("coll", "exepected",
+#                          [([1, 1, 2, 2, 3], {1: 2, 2: 2, 3: 1})  # → {1: 2, 2: 2, 3: 1}
+#                               (['a', 'b', 'a', 'a'], {"a": 3, "b": 1})  # → {'a': 3, 'b': 1}
+#                               ([], {})  # → {}
+#                               ([5, 5, 5, 5], {5: 4})  # → {5: 4}
+#                               ([1, 2, 3], {1: 1, 2: 1, 3: 1})  # → {1: 1, 2: 1, 3: 1}
+#
+#                           ])
+# def count_frequencies(coll):
+#
+#     result = {}
+#
+# for char in coll:
+#     if char not in result :
+#
+#         result[char] = 1
+#     else:
+#         pass
+#     result[char] += 1
 
-@pytest.fixture
-def test_num3():
-    return {"numbers": [111, 12, 1331, 131]}
+# def merge_inventores(inv1, inv2):
+#     merge = inv1.copy()
+#
+#     for item in inv2:
+#         if item in merge:
+#             merge[item] += inv2[item]
+#         else:
+#             merge[item] = inv2[item]
+#     return merge
+#
+#
+# import pytest
+#
+#
+# @pytest.mark.parametrize("coll,expected"[
+#
+#
+# ([1, 1, 2, 2, 3],[[1,2],[2,3],[3,1]]),  # → [[1, 2], [2, 2], [3, 1]]
+# ([1, 2, 3, 4, 5],[[1,2][2,3][4,5]]),  # → [[1, 1], [2, 1], [3, 1], [4, 1], [5, 1]]
+# ([1, 1, 1, 1, 1],[[1,5]]),  # → [[1, 5]]
+# ([]),  # → []
+# (['a', 'a', 'b', 'b', 'a'],[["a",2],["b",2],["a",1]])  # → [['a', 2], ['b', 2], ['a', 1]])
+# ])
+#
+# def my_run_length_encode(coll):
+#     if not coll:
+#         return []
+#     count = 1
+#     result==[]
+#     for i in range(1, len(coll)):
+#         if coll[i] == coll[i - 1]:
+#             count +=1
+#         else:
+#             # result.append ([coll[i-1],count])
+#             count = 1
+#             result.append([coll[-1],count])
+#
+#         return result
+# import pytest
+#
+#
+# @pytest.mark.parametrize("coll, expected, expected_length", [
+#     ([1, 1, 2, 2, 3], [1, 2, 3], 3),
+#     ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], 5),
+#     ([1, 1, 1, 1, 1], [1], 1),
+#     ([], [], 0),
+#     ([1, 2, 2, 3, 3, 3, 2], [1, 2, 3, 2], 4), ])
+# def my_compress(coll, expected, expected_length):
+#     if not coll:
+#         return []
+#     result = [coll[0]]
+#     for i in range(1, len(coll)):
+#         if coll[i]!= coll[i-1]:
+#             result.append(coll[i])
+#     return result
+# import pytest
+#
+#
+# @pytest.mark.parametrize("coll, size, expected", [
+#     ([1, 2, 3, 4, 5], 2, [[1, 2], [3, 4], [5]]),
+#     ([1, 2, 3], 1, [[1], [2], [3]]),
+#     ([1, 2, 3], 5, [[1, 2, 3]]),
+#     ([], 3, []),
+#     ([1, 2, 3, 4], 3, [[1, 2, 3], [4]]),
+# ])
+# def my_chunk(cool, size):
+#     if not cool or size < 0:
+#         return []
+#     result = []
+#
+#     for i in range(0, len(cool), size):
+#         result.append(coll[i:i + size])
+#     return result
+# @pytest.mark.parametrize("coll, start, end, expected",
+#     [
+#         ([], 0, None, []),  # Пустой список
+#         ([1, 2, 3, 4, 5], 0, None, [1, 2, 3, 4, 5]),  # Все элементы
+#         ([1, 2, 3, 4, 5], 2, None, [3, 4, 5]),  # Срез с началом
+#         ([1, 2, 3, 4, 5], 1, 3, [2, 3]),  # Срез с началом и концом
+#         ([1, 2, 3, 4, 5], -2, None, [4, 5]),  # Срез с отрицательным началом
+#         ([1, 2, 3, 4, 5], -10, None, [1, 2, 3, 4, 5]),  # Срез с отрицательным началом за пределами длины
+#         ([1, 2, 3, 4, 5], 0, 3, [1, 2, 3]),  # Срез с концом
+#         ([1, 2, 3, 4, 5], 1, -1, [2, 3, 4]),  # Срез с отрицательным концом
+#     ])
+# def my_slice(coll, start=0, end=None):
+#     """
+#     Возвращает новый массив, содержащий копию части исходного массива.
+#     :param coll: исходный список.
+#     :param start: индекс, по которому начинается извлечение. Если индекс отрицательный,
+#     start указывает смещение от конца списка. По умолчанию равен нулю.
+#     :param end: индекс, по которому заканчивается извлечение (не включая элемент с индексом end).
+#     Если индекс отрицательный, end указывает смещение от конца списка. По умолчанию равен длине исходного списка.
+#     :return: массив элементов
+#     """
+#     length = len(coll)
+#
+#     if length == 0:
+#         return []
+#
+#     normalized_end = length if end is None else end
+#
+#     normalized_start = start
+#
+#     if normalized_start < 0:
+#         if normalized_start < -length:
+#             normalized_start = 0
+#         else:
+#             normalized_start += length
+#
+#     return coll[normalized_start:normalized_end]
 
+# import pytest
+#
+#
+# @pytest.mark.parametrize("value, from_unit, to_unit,expected", [
+#     (100, "C", "F", 212.0),  # C → F
+#     (212, "F", "C", 100.0),  # F → C (исправлено!)
+#     (0, "C", "K", 273.15),  # C → K
+#     (373.15, "K", "C", 100.0),  # K → C
+#     (100, "X", "C", None)
+#
+# ])
+# def convert_temperature(value, from_unit, to_unit):
+#     if from_unit == to_unit:
+#         return value
+#     elif from_unit == "C":
+#         celsius = value
+#
+#     elif from_unit == "F":
+#         celsius = (value - 32) * 5 / 9
+#
+#     elif from_unit == "K":
+#         celsius = value - 273.15
+#
+#     if to_unit == "C":
+#        return round (celsius,2)
+#     elif to_unit == "F":
+#         return round((celsius * 9 / 5) + 32,2)
+#     elif to_unit == "K":
+#         return round( celsius + 273.15,2)
+#     else:
+#         return  None
+#
 
-def chech_numbers(numbers):
-    count = 0
-    for num in numbers:
-        if num % 2 == 0:
-            count += 1
-    return count
+# C → F
+# (celsius * 9/5) + 32
+# C → K
+# celsius + 273.15
+# F → C
+# (value - 32) * 5/9
+# K → C
+# value - 273.15
 
-def test_count1(test_num1):
-        result = chech_numbers(test_num1["numbers"])
-        assert result == test_num1["expected"]
+# def test_convert(value, from_unit, to_unit, expected):
+#     assert convert_temperature(value, from_unit, to_unit) == expected
+
+# import pytest
+#
+#
+# @pytest.fixture
+# def test_num1():
+#     return {"numbers": [1, 2, 3, 4, 5, 6, 7, 8],"expected":4}
+#
+
+# @pytest.fixture
+# def test_num2():
+#     return {"numbers": [11, 12, 31, 43, 54]}
+#
+#
+# @pytest.fixture
+# def test_num3():
+#     return {"numbers": [111, 12, 1331, 131]}
+#
+#
+# def chech_numbers(numbers):
+#     count = 0
+#     for num in numbers:
+#         if num % 2 == 0:
+#             count += 1
+#     return count
+#
+# def test_count1(test_num1):
+#         result = chech_numbers(test_num1["numbers"])
+#         assert result == test_num1["expected"]
 # import pytest
 #
 #
