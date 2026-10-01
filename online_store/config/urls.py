@@ -19,5 +19,5 @@ from django.urls import path, include  # <-- Добавь include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('catalog.urls')),  # <-- Добавь эту строку
+    path('', include('catalog.urls')),
 ]
